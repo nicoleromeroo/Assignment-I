@@ -1,0 +1,38 @@
+= Softwareentwicklung II: 1. Abgabe
+Prof. Dr. Ullrich Hafner <ullrich.hafner@hm.edu>
+
+:xrefstyle: short
+:sectnums:
+
+ifndef::imagesdir[:imagesdir: images]
+ifndef::plantUMLDir[:plantUMLDir: .plantuml/]
+:figure-caption: Abbildung
+
+[TIP]
+====
+
+Abgabe bis zum 8.4. Laden Sie Ihre Lösung im https://classroom.github.com/a/oqxJLmis[GitHub Classroom] für die erste
+Abgabe hoch. Die Verwendung von Pull Requests ist noch nicht erforderlich, Sie dürfen direkt in den `master` Branch
+schreiben.
+
+====
+
+== Rahmenbedingungen
+
+Beachten Sie die link:rahmenbedingungen.adoc[Rahmenbedingungen] für alle Abgaben. Diese sind in einem separaten Dokument in Moodle hinterlegt.
+
+== Initialisieren der Entwicklungsumgebung
+
+Installieren Sie die Entwicklungsumgebung, wie in den Rahmenbedingungen beschrieben.
+Öffnen Sie dann die Klassen `Integers` und `IntegersTest` in Ihrem Projekt. Diese beiden Klassen waren Teil der
+Modularbeit des letzten Semesters -- ich hoffe Sie können sich noch dunkel daran erinnern. Starten Sie die Tests
+in der Entwicklungsumgebung und überprüfen Sie die Funktionsweise der Klassen.
+
+== Testen mit JUnit
+
+Schreiben Sie Ihre ersten Modultests mit JUnit und AssertJ. Gegeben ist eine neue Klasse `UniqueIntegers` für
+die Sie ausreichend viele Tests schreiben sollen. Die Klasse ist eine Abwandlung der Klasse `Integers`: Während die `Integers` Klasse alle übergebenen Werte in ein Array geschrieben hat,
+werden in der Klasse `UniqueIntegers` nur unterschiedliche Werte gespeichert. D.h., alle Duplikate werden
+entfernt. Schreiben Sie für alle Methoden der neuen Klasse `UniqueIntegers` Testfälle. Orientieren
+Sie sich dabei an den bestehenden Tests der Klasse `IntegersTest` und an den Beispielen im JavaDoc.
+

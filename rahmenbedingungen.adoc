@@ -1,0 +1,104 @@
+= Softwareentwicklung II: Rahmenbedingungen Schein
+Prof. Dr. Ullrich Hafner <ullrich.hafner@hm.edu>
+
+:icons: font
+:toc-title: Inhaltsverzeichnis
+:chapter-label:
+:chapter-refsig: Kapitel
+:section-label: Abschnitt
+:section-refsig: Abschnitt
+
+:xrefstyle: short
+:sectnums:
+:partnums:
+ifndef::includedir[:imagesdir: ./]
+ifndef::imagesdir[:imagesdir: ./]
+ifndef::plantUMLDir[:plantUMLDir: .plantuml/]
+:figure-caption: Abbildung
+:table-caption: Tabelle
+
+[TIP]
+====
+
+Die gesamte Lehrveranstaltung findet im Sommersemester 2021 virtuell statt.
+Die Prüfungsleistung besteht aus zwei Teilen. Erstens, einem unbenoteten Schein, der wie im Wintersemester
+semesterbegleitend über Abgaben erworben werden kann. Den Schein für die Lehrveranstaltung erhält man durch 6
+erfolgreiche Abgaben (zweiwöchentliche Einzelabgaben). Eine Abgabe gilt als erfolgreich, wenn mindestens 70%
+der Punkte aus dem Autograding (oder der manuellen Kontrolle) erreicht werden und auch sonst alle Vorgaben
+zur Aufgabe eingehalten wurden. In der Prüfungszeit findet dann als zweiter Teil eine Modularbeit statt.
+Voraussetzung für den Antritt zur Modularbeit ist der Erwerb des Scheins. Die Modularbeit wird wie im letzten Semester
+benotet und definiert letztendlich die Gesamtnote für das Modul Softwareentwicklung II.
+
+====
+
+== Einrichten der Entwicklungsumgebung
+
+Für die praktischen Aufgaben wird ein eigener Rechner mit folgenden Programmen benötigt:
+
+- IntelliJ IDEA Ultimate 2020.3 (2021.1 Beta funktioniert bei mir ebenfalls schon prima) -
+https://www.jetbrains.com/community/education/#students[die Lizenz] gibt es für Studierende
+kostenlos. Sinnvolle Plugins sind u.a. CheckStyle, SpotBugs, PlantUml und ErrorProne
+(siehe meine https://github.com/uhafner/warnings-ng-plugin-devenv/blob/master/My-IntelliJ-Plugins.txt[Installationsliste]).
+- Java Development Kit 11 (LTS)
+- Maven 3.6.x (ist in IntelliJ enthalten)
+- Git 2.x
+
+== Virtuelle Maschine
+
+Wenn Sie Schwierigkeiten haben, die Entwicklungsumgebung bereitzustellen,
+können Sie eine von mir vorkonfigurierte virtuelle Maschine nutzen: damit haben Sie alle Tools zuverlässig
+zur Verfügung. Sie benötigen (zum Beispiel) https://www.virtualbox.org/wiki/Downloads[Virtual Box] um
+diese virtuelle Maschine auszuführen. Laden Sie sie unter dem folgenden Link herunter und importieren Sie sie in
+Virtual Box:
+
+- https://syncandshare.lrz.de/getlink/fiAkMB3vUZgBXdNNYaDUNR4Q/devbox-minimal_2021.1.ova[Minimalkonfiguration (2,4 GB)]:
+Hier müssen Sie einmal das update für unsere Vorlesung ausführen (Tag `dev`). Anschließend werden alle fehlenden Komponenten nachinstalliert.
+- https://syncandshare.lrz.de/dl/fiTKymMw9sk5tBiXNMZWHjUu/devbox-full_2021.1.ova[Maximalkonfiguration (7,9 GB)]:
+Diese Maschine ist vorkonfiguriert für alle Kurse an der Fakultät 07.
+
+Nach dem Start können Sie sich einloggen mit Benutzername **devbox** und Passwort **devbox**. Die virtuellen Maschinen
+sind aktuell auf 2 GByte Hauptspeicher (und 1 Core) konfiguriert. Das ist etwas wenig in der Java Entwicklung.
+Wenn Sie also genügend RAM im eigenen Rechner haben, können Sie das gerne entsprechend erhöhen.
+
+Führen Sie bitte regelmäßig -- auf jeden Fall wenn es auf dem jeweiligen Aufgabenblatt vermerkt ist -- ein Update der Maschine
+durch, indem Sie folgenden Befehl im Terminal ausführen:
+
+[source,shell]
+.Aktualisierung der virtuellen Maschine
+----
+/home/devbox/update.sh dev
+----
+
+Diese Virtuelle Maschine wird zwischen mehreren Modulen an der Fakultät 07 geteilt.
+Die Konfiguration (insbesondere Installation benötigter Pakete) findet über den Parameter des Moduls statt.
+
+== GitHub Classroom
+
+Wir nutzen in diesem Semester wieder GitHub Classroom, um die Praktika-Aufgaben zu verwalten und automatisiert
+zu bewerten. Die Nutzung bietet folgende Vorteile:
+
+- Sie lernen die gleiche Arbeitsweise kennen, die auch in der Industrie und vielen Open-Source-Projekten verwendet wird.
+So sind Sie ideal auf die Praxis vorbereitet. Ich nutze beispielsweise GitHub seit mehr als 10 Jahren für meine
+https://plugins.jenkins.io/ui/search?query=uhafner[Jenkins Open Source Plugins].
+- Sie haben eine ausgereifte Oberfläche, mit der Sie Ihre Abgaben verwalten können:
+  ** Darstellung von Commits
+  ** Reviews von Pull Requests
+  ** Nachverfolgung von offenen Punkten und Fehlern
+  ** Automatische Builds
+
+- Ich habe eine einfache Möglichkeit, private Repositories auf Basis eines Templates für Abgaben zu erstellen.
+
+Wenn Sie weitere Fragen zu GitHub Classroom haben, nutzen Sie bitte auch die
+https://classroom.github.com/help[Online Hilfe] bzw. meine ausführlichere Anleitung. Diese
+finden Sie in meinem
+https://github.com/uhafner/codingstyle/blob/master/doc/Arbeiten-mit-GitHub-Classroom.md[Codingstyle Projekt].
+
+== Eigenständigkeitserklärung
+
+Durch das Hochladen der Lösungen in GitHub erklären Sie jeweils, dass Sie die abgegebenen Lösungen zu den Aufgaben aktiv
+und selbstständig verfasst haben. Zudem bestätigen Sie, dass Sie die Aufgabe alleine bearbeitet haben und nur
+die angegebenen Hilfsmittel und Quellen verwendet wurden. Eine falsche abgegebene Information zu diesen Punkten bewirkt,
+dass die Abgabe als nicht bestanden bewertet wird.
+
+Eine Diskussion mit Kommilitonen ist natürlich erlaubt, ein Tausch oder Kopieren der Lösungen nicht.
+

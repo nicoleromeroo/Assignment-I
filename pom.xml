@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>codingstyle-pom</artifactId>
+    <groupId>edu.hm.hafner</groupId>
+    <version>2.0.3</version>
+  </parent>
+
+  <artifactId>java-2-assignment-1</artifactId>
+  <version>2021.1</version>
+  <name>Softwareentwicklung II - Assignment 1</name>
+
+  <properties>
+    <asciidoctor.maven.plugin.version>2.1.0</asciidoctor.maven.plugin.version>
+    <asciidoctorj.version>2.4.1</asciidoctorj.version>
+    <asciidoctorj.diagram.version>2.0.5</asciidoctorj.diagram.version>
+    <asciidoctorj.pdf.version>1.5.3</asciidoctorj.pdf.version>
+    <jruby.version>9.2.7.0</jruby.version>
+    <java.version>11</java.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>edu.hm.hafner</groupId>
+      <artifactId>codingstyle</artifactId>
+      <version>2.0.6</version>
+    </dependency>
+    <dependency>
+      <groupId>edu.hm.hafner</groupId>
+      <artifactId>codingstyle</artifactId>
+      <version>2.0.6</version>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco-maven-plugin.version}</version>
+        <configuration>
+          <excludes combine.children="append">
+            <exclude>**/Integers.*</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <version>${maven-pitest-plugin.version}</version>
+        <configuration>
+          <targetClasses>
+            <param>edu.hm.hafner.assignment.UniqueIntegers*</param>
+          </targetClasses>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
